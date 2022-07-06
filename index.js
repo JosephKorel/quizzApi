@@ -1,5 +1,4 @@
 const express = require("express");
-const bcrypt = require("bcrypt");
 const { MongoClient, ObjectId } = require("mongodb");
 const cors = require("cors");
 const uri =
@@ -74,10 +73,6 @@ app.post("/addDoc", async (req, res) => {
   } catch (error) {
     res.sendStatus(400).json({ error });
   }
-});
-
-app.get("/", async (req, res) => {
-  res.send("Success");
 });
 
 app.listen(5000, () => console.log("Running on 5000"));
